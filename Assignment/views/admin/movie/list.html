@@ -1,0 +1,36 @@
+<head>
+	<link rel = "stylesheet"
+   type = "text/css"
+   href = "../../listStyle.css" />
+</head>
+<h1>Movie</h1>
+<button type="create" class="btn btn-secondary"><a  href="../movie"><i class="fa fa-plus"></i>Create New Movie</a></button> <br>
+<table class table table-striped>
+<thead>
+<tr>
+<th>Movie ID</th>
+<th>Movie Name</th>
+<th>Movie Description</th>
+<th>Running Time</th>
+<th>Release Date</th>
+<th>Genre</th>
+<th> </th>
+<th> </th>
+</tr>
+</thead>
+<tbody>
+{{#each list}}
+<tr>
+<td>{{this.movie_id}}</td>
+<td>{{this.movie_name}}</td>
+<td>{{this.movie_description}}</td>
+<td>{{this.running_time}}</td>
+<td>{{this.release_date}}</td>
+<td>{{this.genre}}</td>
+<td><button type="button" value="Delete"><a href="../movie/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record?');">Delete</button></td>
+<td><button type="button" value="Edit"><a href="../movie/{{this._id}}">Edit</button></td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+<button type="menu" class="btn btn-info"><a  href="../menu/menu"><i class="fa fa-list-alt"></i>Menu</a> </button>

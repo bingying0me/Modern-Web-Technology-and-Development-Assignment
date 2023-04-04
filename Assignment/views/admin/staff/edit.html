@@ -1,0 +1,43 @@
+<head>
+	<link rel = "stylesheet"
+   type = "text/css"
+   href = "../../addStyle.css" />
+</head>
+
+<h3>{{viewTitle}}</h3>
+<form action="/staff" method="POST" autocomplete="off">
+<input type="hidden" name="_id" value="{{staff._id}}">
+	<div class="form-group">
+		Staff_ID:<br>
+		<input type="numbers" class= "form-control" name="staff_id" placeholder = "Staff_ID" value="{{staff.staff_id}}" required="required" pattern="{1,20}">
+		<br>
+	</div>
+	<div class="form-group">
+		Staff Name:<br>
+		<input type="text" class= "form-control" name="name" placeholder = "Name" value="{{staff.name}}" required="required" pattern="[A-z]{1,20}" title="Please enter the name of not more than 20 words.">
+		<br>
+	</div>
+	<div class="form-group">
+		Position:<br>
+		<input type="text" class= "form-control" name="position"  placeholder = "Position" value="{{staff.position}}" required="required" pattern="[A-z]{1,20}" title="Please enter the name of not more than 20 words.">
+		<br>
+	</div>
+	<div class="form-group">
+		Password:<br>
+		<input type="text" class= "form-control" name="pwd"  placeholder = "Password" value="{{staff.pwd}}" required="required">
+		<br>
+	</div>
+	<div class="form-group">
+		Login Type:<br>
+		<input type="text" class= "form-control" name="login_type" value="{{staff.login_type}}" placeholder = "Login Type" >
+		<br><br>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+		<button type="reset" class= "btn btn-info">Reset</button>
+	</div>
+</form>
+<div class="outer_button">
+		<button type="menu" class="btn btn-info"><a  href="/admin/menu/menu"><i class="fa fa-list-alt"></i>Menu</a> </button>
+		<button type="view" class="btn btn-info"><a  href="/admin/staff/list"><i class="fa fa-list-alt"></i>View All</a> </button>
+</div>

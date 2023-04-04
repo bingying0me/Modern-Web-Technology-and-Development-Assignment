@@ -1,0 +1,2 @@
+$('.mdb-select').materialSelect({
+});

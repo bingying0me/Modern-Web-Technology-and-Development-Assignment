@@ -1,0 +1,28 @@
+<head>
+	<link rel = "stylesheet"
+   type = "text/css"
+   href = "../../listStyle.css" />
+</head>
+
+<h3>MovieRate</h3>
+<table class table table-striped>
+<thead>
+<tr>
+<th>Movie ID</th>
+<th>User ID</th>
+<th>Rate</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+{{#each list}}
+<tr>
+<td>{{this.movie_id}}</td>
+<td>{{this.user_id}}</td>
+<td>{{this.rate}}</td>
+<td><button type="button" value="Edit"><a href="../movieRate/{{this._id}}">Edit</button></td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+<button type="menu" class="btn btn-info"><a  href="../menu/menu"><i class="fa fa-list-alt"></i>Menu</a> </button>

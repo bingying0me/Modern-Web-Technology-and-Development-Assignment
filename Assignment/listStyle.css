@@ -1,0 +1,56 @@
+body{
+  background-color: #000;
+  color: #FFF;
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #e1f4f3;
+  color: #000;
+}
+
+button {
+  width: 10%;
+  background-color: #e1f4f3;
+  color: #000;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+a:link {
+  text-decoration: none;
+  color: #000;
+}
+
+td button{
+  width: 100%;
+  background-color: #e1f4f3;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+h3{
+	padding-left: 5px;
+}

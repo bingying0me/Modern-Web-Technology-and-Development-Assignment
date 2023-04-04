@@ -1,0 +1,32 @@
+<head>
+	<link rel = "stylesheet"
+   type = "text/css"
+   href = "../../listStyle.css" />
+</head>
+
+<body>
+<h3>Staff List</h3>
+<table class table table-striped>
+<thead>
+<tr>
+<th>Staff ID</th>
+<th>Staff Name</th>
+<th>Password</th>
+<th>Login Type</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+{{#each list}}
+<tr>
+<td>{{this.staff_id}}</td>
+<td>{{this.name}}</td>
+<td>{{this.password}}</td>
+<td>{{this.login_type}}</td>
+<td><button type="button" value="Edit"><a href="../staff/{{this._id}}">Edit</button></td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+<button type="menu" class="btn btn-info"><a  href="../menu/menu"><i class="fa fa-list-alt"></i>Menu</a> </button> 
+</body>

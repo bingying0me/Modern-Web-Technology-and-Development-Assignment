@@ -1,0 +1,47 @@
+<head>
+	<link rel = "stylesheet"
+   type = "text/css"
+   href = "../../addStyle.css" />
+</head>
+<h3>{{viewTitle}}</h3>
+<form action="/admin/movie" method="POST" autocomplete="off">
+<input type="hidden" name="_id" value="{{movie._id}}">
+	<div class="form-group">
+		Movie_ID:<br>
+		<input type="numbers" class= "form-control" name="movie_id" placeholder = "Movie_ID" value="{{movie.movie_id}}" pattern="{1,20}">
+		<br>
+	</div>
+	<div class="form-group">
+		Movie name:<br>
+		<input type="text" class= "form-control" name="movie_name" placeholder = "Movie Name" value="{{movie.movie_name}}" title="Please enter the name of not more than 20 words.">
+		<br>
+	</div>
+	<div class="form-group">
+		Movie Description:<br>
+		<input type="text" class= "form-control" name="movie_description" placeholder = "Movie Description" value="{{movie.movie_description}}">
+		<br><br>
+	</div>
+	<div class="form-group">
+		Running Time:<br>
+		<input type="text" class= "form-control" name="running_time" placeholder = "Running Time" value="{{movie.running_time}}">
+		<br><br>
+	</div>
+	<div class="form-group">
+		Release Date:<br>
+		<input type="text" class= "form-control" name="release_date" placeholder = "Release Date" value="{{movie.release_date}}">
+		<br><br>
+	</div>
+	<div class="form-group">
+		Genre:<br>
+		<input type="text" class= "form-control" name="genre" placeholder = "Genre" value="{{movie.genre}}" >
+		<br><br>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+		<button type="reset" class= "btn btn-info">Reset</button>
+	</div>
+</form>
+<div class="outer_button">
+		<button type="menu" class="btn btn-info"><a  href="/admin/menu/menu"><i class="fa fa-list-alt"></i>Menu</a> </button>
+		<button type="view" class="btn btn-info"><a  href="/admin/movie/list"><i class="fa fa-list-alt"></i>View All</a> </button>
+</div>

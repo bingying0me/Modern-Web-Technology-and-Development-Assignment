@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../menu.css">
+<link rel="stylesheet" type="text/css" href="../home.css">
+<link rel="stylesheet" type="text/css" href="../searching.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="page">
+  <span class="menu_toggle">
+    <i class="menu_open fa fa-bars fa-lg"></i>
+    <i class="menu_close fa fa-times fa-lg"></i>
+  </span>
+  <form  action="/logout" method="post" autocomplete="off">
+  <ul class="menu_items">
+    <li><a href="../index_login"><i class="icon fa fa-home fa-2x"></i> Home</a></li>
+    <li><a href="../movie_login"><i class="icon fa fa-film fa-2x"></i> Movie</a></li>
+    <form action="/movie_login" method="GET" autocomplete="off">
+    <li style="color: black">
+      <div class="form-group log_btn">
+      <input type="submit" value="Logout" class="btn float-right login_btn">
+      </div>
+    </li>
+    </form>
+  </ul>
+  </form>
+  <main class="content">
+    <div class="content_inner">
+      <div class="input-group md-form form-sm form-2 ">
+          <form action="/movie_login" method="POST" autocomplete="off">
+          <input type="text" placeholder="Search" aria-label="Search" name="keyword" id="keyword">
+          <div class="input-group-append">
+<!--           <span id="basic-text1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span> -->
+          <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+          </div>
+          </form>
+      </div>
+      {{#each movie}}
+      <form action="/movie_login/list/{{this.movie_id}}" method="POST" autocomplete="off">
+          </br>
+           <input hidden name="movie_id" value="{{this.movie_id}}"/>
+            ID: {{this.movie_id}}
+            </br>
+            Name: {{this.movie_name}}
+            </br>
+            Description: {{this.movie_description}}
+            </br>
+            Running Time: {{this.running_time}}
+            </br>
+            Release Date: {{this.release_date}}
+            </br>
+            Genre: {{this.genre}}
+            </br>
+            <p>Totle Rate: {{this.Mean}}</p>
+          </br>
+            <div id="ratebox">
+            Your Rate: 
+            <SELECT id="rate" name="rate">
+            <OPTION Value="0">0</OPTION>
+            <OPTION Value="1">1</OPTION>
+            <OPTION Value="2">2</OPTION>
+            <OPTION Value="3">3</OPTION>
+            <OPTION Value="4">4</OPTION>
+            <OPTION Value="5">5</OPTION>
+            </SELECT>
+            <button style="display: {{this.visit}};" type="submit" class="btn btn-info">Submit</button>
+            </div>
+            </br>
+          </br>
+          </br>
+    </form>
+      {{/each}}
+    </div>
+  </main>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="../menu.js"></script>
+</body>
+</html>
